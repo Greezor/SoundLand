@@ -1,0 +1,15 @@
+#установка кодировки utf-8
+AddDefaultCharset utf-8
+
+Options All -Indexes
+
+#Запуск движка
+RewriteEngine on
+RewriteBase /
+
+#Правило на случай отсутствия файла указанного в адресной строке
+RewriteCond %{REQUEST_FILENAME} !-f
+#Правило на случай отсутствия директории указанной в адресной строке
+RewriteCond %{REQUEST_FILENAME} !-d
+#Выполнение запуска главной страницы если выполняются указанные выше правила
+RewriteRule ^(.*)$ /index.php [L]
