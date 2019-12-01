@@ -24,7 +24,7 @@
     <hr>
 
     <footer>
-        copyright Leon
+        &copy; <?=date('Y')?> Leon 
     </footer>
 </body>
 </html>
