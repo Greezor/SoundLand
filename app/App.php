@@ -3,6 +3,7 @@
 namespace app;
 
 use app\core\CRUD;
+use app\core\Migration;
 use app\core\Router;
 
 class App
@@ -11,6 +12,7 @@ class App
     public static $app;
 
     public $db;
+    public $migration;
     public $router;
 
     protected function loader($dir, $fullClass)
@@ -42,6 +44,7 @@ class App
         });
 
         $this->db = new CRUD();
+        $this->migration = new Migration();
         $this->router = new Router();
     }
 
