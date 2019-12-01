@@ -2,12 +2,15 @@
 
 namespace app;
 
+use app\core\CRUD;
 use app\core\Router;
 
 class App
 {
 
     public static $app;
+
+    public $db;
     public $router;
 
     protected function loader($dir, $fullClass)
@@ -32,13 +35,14 @@ class App
 
     public function __construct()
     {
+        static::$app =& $this;
+
         spl_autoload_register(function($class){
             return $this->loader(__DIR__, $class);
         });
 
+        $this->db = new CRUD();
         $this->router = new Router();
-
-        static::$app = $this;
     }
 
 }
