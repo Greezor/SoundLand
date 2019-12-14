@@ -28,7 +28,7 @@ class Router extends BaseClass
 
     public function go($url)
     {
-        list( /* before first slash */, $controllerName, $methodName ) = explode('/', $url);
+        list( /* before first slash */, $controllerName, $methodName ) = explode('/', explode('?', $url)[0]);
 
         $controllerName = ucfirst($controllerName);
         $controllerClass = "\\app\\controllers\\$controllerName";
