@@ -17,7 +17,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <button type="button" class="btn btn-dark mr-sm-2"><a href="#" role="button" style="color:#FFFFFF;"><img src="/assets/images/book.svg"> Личный кабинет</a></button>
+                <button type="button" class="btn btn-dark mr-sm-2"><a href="/page/cabinet" role="button" style="color:#FFFFFF;"><img src="/assets/images/book.svg"> Личный кабинет</a></button>
             </li>
             <li class="nav-item">
                 <button type="button" class="btn btn-dark my-2 my-sm-0"><a href="#" role="button" style="color:#FFFFFF;"><img src="/assets/images/archive.svg"> База групп</a></button>
@@ -29,7 +29,7 @@
             </li>
 
             <li>
-                <button type="button" class="btn btn-dark my-2 my-sm-0"><a href="/page/sign_in" role="button" style="color:#FFFFFF;"><img src="/assets/images/log-in.svg"> Войти</a></button>
+                <a href="/page/sign_in" class="btn btn-dark" style="color:#FFFFFF;"><img src="/assets/images/log-in.svg"> Войти</a>
             </li>
         </ul>
           </div>
