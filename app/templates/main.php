@@ -25,11 +25,11 @@
         </ul>
         <ul class="nav navbar-nav pull-right">
             <li>
-                <button type="button" class="btn btn-dark mr-sm-2"><a href="/page/sign_up" role="button" style="color:#FFFFFF;"><img src="/assets/images/user.svg"> Регистрация</a></button>
+                <button type="button" class="btn btn-dark mr-sm-2"><a href="/auth/sign_up" role="button" style="color:#FFFFFF;"><img src="/assets/images/user.svg"> Регистрация</a></button>
             </li>
 
             <li>
-                <button type="button" class="btn btn-dark my-2 my-sm-0"><a href="/page/sign_in" role="button" style="color:#FFFFFF;"><img src="/assets/images/log-in.svg"> Войти</a></button>
+                <button type="button" class="btn btn-dark my-2 my-sm-0"><a href="/auth/sign_in" role="button" style="color:#FFFFFF;"><img src="/assets/images/log-in.svg"> Войти</a></button>
             </li>
         </ul>
           </div>
