@@ -8,7 +8,7 @@ RewriteEngine on
 RewriteBase /
 
 #Прячем .md файлы
-RewriteCond %{REQUEST_URI} \.md$
+RewriteCond %{REQUEST_URI} \.md$ [OR]
 #Правило на случай отсутствия файла указанного в адресной строке
 RewriteCond %{REQUEST_FILENAME} !-f
 #Правило на случай отсутствия директории указанной в адресной строке
