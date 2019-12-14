@@ -19,4 +19,9 @@ class Page extends Controller
         echo $this->render('page/error404');
     }
 
+    public function sign_up()
+    {
+        echo $this->render('page/sign_up');
+    }
+
 }

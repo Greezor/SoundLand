@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'dsn' => 'mysql:host=localhost;dbname=github.soundland',
+    'dsn' => 'mysql:host=localhost;dbname=soundland',
     'user' => 'root',
-    'pass' => '123',
+    'pass' => '',
 ];
