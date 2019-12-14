@@ -25,7 +25,7 @@
         </ul>
         <ul class="nav navbar-nav pull-right">
             <li>
-                <button type="button" class="btn btn-dark mr-sm-2"><a href="/auth/sign_up" role="button" style="color:#FFFFFF;"><img src="/assets/images/user.svg"> Регистрация</a></button>
+                <a href="/auth/sign_up" class="btn btn-dark mr-sm-2" style="color:#FFFFFF;"><img src="/assets/images/user.svg"> Регистрация</a>
             </li>
 
             <li>
