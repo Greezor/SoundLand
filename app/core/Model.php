@@ -27,33 +27,38 @@ class Model extends BaseClass
         return parent::__set($column, $value);
     }
 
-    public function get__db()
+    public static function getDB()
     {
         return App::$app->db;
     }
 
-    public function tableName()
+    public function get__db()
     {
-        return strtolower(get_class($this));
+        return static::getDB();
+    }
+
+    public static function tableName()
+    {
+        return null;
     }
 
     public static $__schema = null;
     public function get__schema()
     {
-        if( !self::$__schema ){
-            self::$__schema = [];
+        if( !static::$__schema ){
+            static::$__schema = [];
 
             foreach(
                 $this->db->pdo
-                    ->query('describe ' . $this->tableName())
+                    ->query('describe ' . static::tableName())
                 as
                 $attr
             ){
-                self::$__schema[$attr->Field] = null;
+                static::$__schema[$attr['Field']] = null;
             }
         }
 
-        return self::$__schema;
+        return static::$__schema;
     }
 
     public static function find($condition = '', $params = [])
@@ -62,11 +67,12 @@ class Model extends BaseClass
             function($row){
                 return new self($row, false);
             },
-            $this->db->read(
-                $this->tableName(),
-                $condition,
-                $params
-            )
+            static::getDB()
+                ->read(
+                    static::tableName(),
+                    $condition,
+                    $params
+                )
         );
     }
 
@@ -86,7 +92,7 @@ class Model extends BaseClass
 
         if( $this->__isNew ){
             $success = $this->db->create(
-                $this->tableName(),
+                static::tableName(),
                 $this->__attributes
             );
 
@@ -96,7 +102,7 @@ class Model extends BaseClass
             }
         }else{
             $success = $this->db->update(
-                $this->tableName(),
+                static::tableName(),
                 'where id = :id',
                 [ 'id' => $this->id ]
             );
@@ -109,9 +115,9 @@ class Model extends BaseClass
     {
         if( $this->__isNew )
             return true;
-            
+
         return $this->db->delete(
-            $this->tableName(),
+            static::tableName(),
             'where id = :id',
             [ 'id' => $this->id ]
         );
