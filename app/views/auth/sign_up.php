@@ -3,7 +3,7 @@
 
     <label class="d-block form-group">
         <span class="control-label">Адрес электронной почты</span>
-        <input class="form-control" type="email" name="User[login]" value="<?=$form['login']?>">
+        <input class="form-control" type="email" name="User[login]" value="<?=strip_tags($form['login'])?>">
         <?php if( isset($errors['login']) ){ ?>
             <small class="d-block alert alert-danger">
                 <span><?=$errors['login']?></span>
@@ -13,7 +13,7 @@
 
     <label class="d-block form-group">
         <span class="control-label">Никнейм</span>
-        <input class="form-control" type="text" name="User[nickname]" value="<?=$form['nickname']?>">
+        <input class="form-control" type="text" name="User[nickname]" value="<?=strip_tags($form['nickname'])?>">
         <?php if( isset($errors['nickname']) ){ ?>
             <small class="d-block alert alert-danger">
                 <span><?=$errors['nickname']?></span>
@@ -23,7 +23,7 @@
 
     <label class="d-block form-group">
         <span class="control-label">Введите пароль</span>
-        <input class="form-control" type="password" name="User[password]" value="<?=$form['password']?>">
+        <input class="form-control" type="password" name="User[password]" value="<?=strip_tags($form['password'])?>">
         <?php if( isset($errors['password']) ){ ?>
             <small class="d-block alert alert-danger">
                 <span><?=$errors['password']?></span>
@@ -33,7 +33,7 @@
 
     <label class="d-block form-group">
         <span class="control-label">Повторите пароль</span>
-        <input class="form-control" type="password" name="User[password_repeat]" value="<?=$form['password_repeat']?>">
+        <input class="form-control" type="password" name="User[password_repeat]" value="<?=strip_tags($form['password_repeat'])?>">
         <?php if( isset($errors['password_repeat']) ){ ?>
             <small class="d-block alert alert-danger">
                 <span><?=$errors['password_repeat']?></span>
