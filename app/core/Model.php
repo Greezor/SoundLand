@@ -103,6 +103,7 @@ class Model extends BaseClass
         }else{
             $success = $this->db->update(
                 static::tableName(),
+                $this->__attributes,
                 'where id = :id',
                 [ 'id' => $this->id ]
             );
