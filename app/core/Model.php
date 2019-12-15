@@ -65,7 +65,7 @@ class Model extends BaseClass
     {
         return array_map(
             function($row){
-                return new self($row, false);
+                return new static($row, false);
             },
             static::getDB()
                 ->read(
