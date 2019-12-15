@@ -10,13 +10,38 @@ class Auth extends Controller
 
     public function sign_in()
     {
+        if( !!User::getMe() )
+            return $this->redirect('/user/cabinet');
+
+        $form = [];
+        $error = null;
+
+        if( $_POST ){
+            $form = $_POST['User'];
+
+            $user = User::find('where login = :login', [
+                'login' => $form['login'],
+            ])[0];
+
+            if( !!$user && $user->login($form['password']) ){
+                return $this->redirect('/user/cabinet');
+            }
+
+            $error = 'Неверный логин и/или пароль';
+        }
+
         echo $this->render('auth/sign_in', [
             'signed_up' => (bool) $_GET['signed_up'],
+            'form' => $form,
+            'error' => $error,
         ]);
     }
 
     public function sign_up()
     {
+        if( !!User::getMe() )
+            return $this->redirect('/user/cabinet');
+
         $form = [];
         $errors = [];
 
@@ -61,6 +86,14 @@ class Auth extends Controller
             'form' => $form,
             'errors' => $errors,
         ]);
+    }
+
+    public function logout()
+    {
+        if( !!$user = User::getMe() )
+            $user->logout();
+
+        return $this->redirect('/');
     }
 
 }
