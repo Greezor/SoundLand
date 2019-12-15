@@ -1,3 +1,10 @@
+<?php
+
+use app\models\User;
+
+$me = User::getMe();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,21 +23,29 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <button type="button" class="btn btn-dark mr-sm-2"><a href="/page/cabinet" role="button" style="color:#FFFFFF;"><img src="/assets/images/book.svg"> Личный кабинет</a></button>
-            </li>
-            <li class="nav-item">
-                <button type="button" class="btn btn-dark my-2 my-sm-0"><a href="#" role="button" style="color:#FFFFFF;"><img src="/assets/images/archive.svg"> База групп</a></button>
-            </li>
+            <?php if( !!$me ){ ?>
+                <li class="nav-item">
+                    <button type="button" class="btn btn-dark mr-sm-2"><a href="/page/cabinet" role="button" style="color:#FFFFFF;"><img src="/assets/images/book.svg"> Личный кабинет</a></button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="btn btn-dark my-2 my-sm-0"><a href="#" role="button" style="color:#FFFFFF;"><img src="/assets/images/archive.svg"> База групп</a></button>
+                </li>
+            <?php } ?>
         </ul>
         <ul class="nav navbar-nav pull-right">
-            <li>
-                <a href="/auth/sign_up" class="btn btn-dark mr-sm-2" style="color:#FFFFFF;"><img src="/assets/images/user.svg"> Регистрация</a>
-            </li>
+            <?php if( !!$me ){ ?>
+                <li>
+                    <a href="/auth/logout" class="btn btn-dark" style="color:#FFFFFF;">Выйти</a>
+                </li>
+            <?php }else{ ?>
+                <li>
+                    <a href="/auth/sign_up" class="btn btn-dark mr-sm-2" style="color:#FFFFFF;"><img src="/assets/images/user.svg"> Регистрация</a>
+                </li>
 
-            <li>
-                <a href="/auth/sign_in" class="btn btn-dark" style="color:#FFFFFF;"><img src="/assets/images/log-in.svg"> Войти</a>
-            </li>
+                <li>
+                    <a href="/auth/sign_in" class="btn btn-dark" style="color:#FFFFFF;"><img src="/assets/images/log-in.svg"> Войти</a>
+                </li>
+            <?php } ?>
         </ul>
           </div>
 
