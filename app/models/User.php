@@ -18,7 +18,38 @@ class User extends Model
 
     public function set__autopass($value)
     {
-        $this->password = md5($value);
+        $this->password = password_hash($value, PASSWORD_BCRYPT);
+    }
+
+    public function login($password)
+    {
+        $success = false;
+
+        if( password_verify($password, $this->password) ){
+            $_SESSION['user_id'] = $this->id;
+            $_SESSION['ip'] = $_SERVER['REMOTE_ADDR'];
+
+            $success = true;
+        }
+
+        return $success;
+    }
+
+    public function logout()
+    {
+        unset($_SESSION['user_id']);
+        unset($_SESSION['ip']);
+    }
+
+    public static function getMe()
+    {
+        if( isset($_SESSION['user_id']) && $_SESSION['ip'] == $_SERVER['REMOTE_ADDR'] ){
+            return self::find('where id = :id', [
+                'id' => (int) $_SESSION['user_id'],
+            ])[0];
+        }
+
+        return null;
     }
 
 }
