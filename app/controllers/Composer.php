@@ -4,12 +4,12 @@ namespace app\controllers;
 
 use app\core\Controller;
 
-class User extends Controller
+class Composer extends Controller
 {
 
     public function cabinet()
     {
-        echo $this->render('user/cabinet');
+        echo $this->render('composer/cabinet');
     }
 
 }

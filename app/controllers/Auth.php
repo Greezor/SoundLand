@@ -11,7 +11,7 @@ class Auth extends Controller
     public function sign_in()
     {
         if( !!User::getMe() )
-            return $this->redirect('/user/cabinet');
+            return $this->redirect('/composer/cabinet');
 
         $form = [];
         $error = null;
@@ -24,7 +24,7 @@ class Auth extends Controller
             ])[0];
 
             if( !!$user && $user->login($form['password']) ){
-                return $this->redirect('/user/cabinet');
+                return $this->redirect('/composer/cabinet');
             }
 
             $error = 'Неверный логин и/или пароль';
@@ -40,7 +40,7 @@ class Auth extends Controller
     public function sign_up()
     {
         if( !!User::getMe() )
-            return $this->redirect('/user/cabinet');
+            return $this->redirect('/composer/cabinet');
 
         $form = [];
         $errors = [];
