@@ -39,6 +39,8 @@ class App
     {
         static::$app =& $this;
 
+        session_start();
+
         spl_autoload_register(function($class){
             return $this->loader(__DIR__, $class);
         });
