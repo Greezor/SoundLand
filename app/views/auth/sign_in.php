@@ -1,5 +1,5 @@
-<form style="width: 300px; margin:100px auto; display:block;background-color: #FFFFFF99;border: 6px solid #00000099;padding: 40px; border-radius: 25px;">
-    <p>Вход</p>
+<form method="POST" style="width: 500px; margin:100px auto; display:block;background-color: #FFFFFF99;border: 6px solid #00000099;padding: 40px; border-radius: 25px;">
+    <h3 class="mb-5 text-center">Вход</h3>
 
     <?php if( $signed_up ){ ?>
         <div class="alert alert-success">
@@ -9,17 +9,23 @@
         </div>
     <?php } ?>
 
-    <div class="form-group">
+    <label class="d-block form-group">
+        <span class="control-label">Адрес электронной почты</span>
+        <input class="form-control" type="email" name="User[login]" value="<?=htmlspecialchars($form['login'])?>">
+    </label>
 
-        <label for="exampleInputEmail1">Адрес электронной почты</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <label class="d-block form-group">
+        <span class="control-label">Пароль</span>
+        <input class="form-control" type="password" name="User[password]" value="<?=htmlspecialchars($form['password'])?>">
+    </label>
 
-        <div class="form-group">
-
-            <label for="exampleInputPassword1">Пароль</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
-
+    <?php if( $error ){ ?>
+        <div class="alert alert-danger">
+            <span><?=$error?></span>
         </div>
+    <?php } ?>
 
-        <button type="submit" class="btn btn-dark">Submit</button>
+    <div class="mt-5 text-center">
+        <button type="submit" class="btn btn-dark">Войти</button>
+    </div>
 </form>
