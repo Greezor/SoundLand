@@ -25,7 +25,7 @@ $me = User::getMe();
         <ul class="navbar-nav mr-auto">
             <?php if( !!$me ){ ?>
                 <li class="nav-item">
-                    <a href="/user/cabinet" class="btn btn-dark mr-sm-2" style="color:#FFFFFF;"><img src="/assets/images/book.svg"> Личный кабинет</a></button>
+                    <a href="/composer/cabinet" class="btn btn-dark mr-sm-2" style="color:#FFFFFF;"><img src="/assets/images/book.svg"> Личный кабинет</a></button>
                 </li>
                 <li class="nav-item">
                     <a href="/discography/groups" class="btn btn-dark my-2 my-sm-0" style="color:#FFFFFF;"><img src="/assets/images/archive.svg"> База групп</a>
