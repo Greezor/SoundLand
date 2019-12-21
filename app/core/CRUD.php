@@ -59,7 +59,7 @@ class CRUD extends BaseClass
         $pdo_update = [];
 
         foreach($row as $key => $value){
-            $pdo_update["PDO__UPDATE_COLUMN->$key"] = $value;
+            $pdo_update["PDO__UPDATE_COLUMN_$key"] = $value;
         }
 
         $payload = implode(', ', array_map(
