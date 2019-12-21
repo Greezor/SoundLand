@@ -12,4 +12,9 @@ class Discography extends Controller
         echo $this->render('discography/groups');
     }
 
+    public function group()
+    {
+        echo $this->render('discography/group');
+    }
+
 }
