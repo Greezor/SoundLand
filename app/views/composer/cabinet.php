@@ -5,6 +5,6 @@
     <p><span>Почта: </span></p>
     <p><span>Никнейм: </span></p>
     <p><span>Роль: </span></p>
-    <a href="#" class="btn btn-dark mr-sm-2" style="color:#FFFFFF;">Редактировать данные</a>
+    <a href="" class="btn btn-dark mr-sm-2" style="color:#FFFFFF;"><img src="/assets/images/edit.svg"> Редактировать данные</a>
     </div>
 </div>
