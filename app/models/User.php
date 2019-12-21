@@ -41,6 +41,20 @@ class User extends Model
         unset($_SESSION['ip']);
     }
 
+    public function get__icon()
+    {
+        if( !$this->avatar )
+            return '/assets/images/user.svg';
+
+        return $this->avatar;
+    }
+
+    public function set__icon($value)
+    {
+        $this->avatar = $value;
+    }
+
+    protected static $user_cache = null;
     public static function getMe()
     {
         if( isset($_SESSION['user_id']) && $_SESSION['ip'] == $_SERVER['REMOTE_ADDR'] ){
