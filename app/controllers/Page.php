@@ -9,9 +9,7 @@ class Page extends Controller
 
     public function index()
     {
-        echo $this->render('page/index', [
-            'clock' => date('H:i:s'),
-        ]);
+        echo $this->render('page/index');
     }
 
     public function error404()
