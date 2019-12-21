@@ -54,7 +54,6 @@ class User extends Model
         $this->avatar = $value;
     }
 
-    protected static $user_cache = null;
     public static function getMe()
     {
         if( isset($_SESSION['user_id']) && $_SESSION['ip'] == $_SERVER['REMOTE_ADDR'] ){
