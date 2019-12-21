@@ -19,18 +19,19 @@ class Composer extends Controller
             $form = $_POST['User'];
 
             if( isset($_FILES['avatar']) ){
-                $base64 = base64_encode(
-                    file_get_contents(
-                        $_FILES['avatar']['tmp_name']
-                    )
+                $file = file_get_contents(
+                    $_FILES['avatar']['tmp_name']
                 );
 
+                $base64 = base64_encode($file);
                 $mime = $_FILES['avatar']['type'];
 
-                $user->icon = "data:$mime;base64,$base64";
+                if( !!$file )
+                    $user->icon = "data:$mime;base64,$base64";
             }
 
-            $user->nickname = $form['nickname'];
+            if( !!$form['nickname'] )
+                $user->nickname = $form['nickname'];
 
             $edited = $user->save();
         }
