@@ -23,16 +23,11 @@ class App
 
         if( file_exists($file) ){
             require_once $file;
-            return true;
         }
 
         foreach(glob("$dir/*",  GLOB_ONLYDIR) as $subdir){
-            if( $this->loader($subdir, $class) ){
-                return true;
-            }
+            $this->loader($subdir, $class);
         }
-
-        return false;
     }
 
     public function __construct()
@@ -42,7 +37,7 @@ class App
         session_start();
 
         spl_autoload_register(function($class){
-            return $this->loader(__DIR__, $class);
+            $this->loader(__DIR__, $class);
         });
 
         $this->db = new CRUD();
