@@ -42,23 +42,20 @@ class Model extends BaseClass
         return null;
     }
 
-    public static $__schema = null;
     public function get__schema()
     {
-        if( !static::$__schema ){
-            static::$__schema = [];
+        $schema = [];
 
-            foreach(
-                $this->db->pdo
-                    ->query('describe ' . static::tableName())
-                as
-                $attr
-            ){
-                static::$__schema[$attr['Field']] = null;
-            }
+        foreach(
+            $this->db->pdo
+                ->query('describe ' . static::tableName())
+            as
+            $attr
+        ){
+            $schema[$attr['Field']] = null;
         }
 
-        return static::$__schema;
+        return $schema;
     }
 
     public static function find($condition = '', $params = [])
