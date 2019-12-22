@@ -51,7 +51,15 @@ class User extends Model
 
     public function set__icon($value)
     {
-        $this->avatar = $value;
+        $file = file_get_contents(
+            $value['tmp_name']
+        );
+
+        $base64 = base64_encode($file);
+        $mime = $value['type'];
+
+        if( !!$file )
+            $this->avatar = "data:$mime;base64,$base64";
     }
 
     public static function getMe()
