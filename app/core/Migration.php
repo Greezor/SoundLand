@@ -40,7 +40,7 @@ class Migration extends BaseClass
     {
         $versions = array_map(
             function($file){
-                return explode('.', end(explode(DIRECTORY_SEPARATOR, $file)))[0];
+                return explode('.', end(explode('/', $file)))[0];
             },
             $this->migrations
         );
