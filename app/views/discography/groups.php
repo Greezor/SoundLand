@@ -3,9 +3,11 @@
     <div class="card-body" align="left>
 
         <div class="list-group">
-            <a href="/discography/group" class="list-group-item list-group-item-action">Группа 1</a>
-            <a href="#" class="list-group-item list-group-item-action">Группа 2</a>
-            <a href="#" class="list-group-item list-group-item-action">Группа 3</a>
+            <?php foreach($groups as $user){ ?>
+                <a href="/discography/group?id=<?=htmlspecialchars($user->id)?>" class="list-group-item list-group-item-action">
+                    <?=htmlspecialchars($user->nickname)?>
+                </a>
+            <?php } ?>
         </div>
 
     </div>
