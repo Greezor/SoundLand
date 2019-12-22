@@ -1,3 +1,6 @@
+<?php
+    use app\models\User;
+?>
 <div class="card" align="center" style="width: 50rem;margin:50px auto; background-color:#FFFFFF99;border: 6px solid #00000099;padding: 10px; border-radius: 25px;">
  <h5 class="card-title">Личный кабинет</h5>
     <div class="card-body" align="left">
@@ -42,17 +45,20 @@
             </p>
             <p>
                 <span>Почта: </span>
-                <?=$user->login?>
+                <?=htmlspecialchars($user->login)?>
             </p>
             <p>
                 <span>Никнейм: </span>
-                <?=$user->nickname?>
+                <?=htmlspecialchars($user->nickname)?>
             </p>
             <p>
                 <span>Роль: </span>
                 <?=$user->role?>
             </p>
-            <a href="?edit=1" class="btn btn-dark">Редактировать данные</a>
+            <a href="?edit=1" class="btn btn-dark mr-2">Редактировать данные</a>
+            <?php if( $user->role == User::ROLE_USER ){ ?>
+                <a href="/discography/group?id=<?=htmlspecialchars($user->id)?>" class="btn btn-dark">Моя дискография</a>
+            <?php } ?>
         <?php } ?>
     </div>
 </div>
