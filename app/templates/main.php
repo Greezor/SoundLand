@@ -24,18 +24,18 @@ $me = User::getMe();
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <?php if( !!$me ){ ?>
-                <li class="nav-item">
-                    <a href="/composer/cabinet" class="btn btn-dark mr-sm-2" style="color:#FFFFFF;"><img src="/assets/images/book.svg"> Личный кабинет</a></button>
-                </li>
-                <li class="nav-item">
-                    <a href="/discography/groups" class="btn btn-dark mr-sm-2 my-2 my-sm-0" style="color:#FFFFFF;"><img src="/assets/images/archive.svg"> База групп</a>
-                </li>
                 <?php if( $me->role == User::ROLE_ADMIN || $me->role == User::ROLE_CONTENT_MANAGER ){ ?>
                     <li class="nav-item">
-                        <a href="/cms/index" class="btn btn-dark my-2 my-sm-0" style="color:#FFFFFF;">CMS</a>
+                        <a href="/cms/index" class="btn btn-dark my-2 mr-2" style="color:#FFFFFF;">CMS</a>
                     </li>
                 <?php } ?>
+                <li class="nav-item">
+                    <a href="/composer/cabinet" class="btn btn-dark my-2 mr-2" style="color:#FFFFFF;"><img src="/assets/images/book.svg"> Личный кабинет</a></button>
+                </li>
             <?php } ?>
+            <li class="nav-item">
+                <a href="/discography/groups" class="btn btn-dark my-2 mr-2" style="color:#FFFFFF;"><img src="/assets/images/archive.svg"> База групп</a>
+            </li>
         </ul>
 
         <ul class="nav navbar-nav pull-right">
