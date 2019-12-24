@@ -36,7 +36,7 @@
                     <span>Роль: </span>
                     <input class="form-control" type="text" value="<?=htmlspecialchars($user->role)?>" disabled>
                 </p>
-                <button class="btn btn-dark" type="submit">Сохранить</button>
+                <button class="btn btn-dark" type="submit"><img src="/assets/images/save.svg"> Сохранить</button>
             </form>
         <?php }else{ ?>
             <p>
@@ -55,9 +55,9 @@
                 <span>Роль: </span>
                 <?=$user->role?>
             </p>
-            <a href="?edit=1" class="btn btn-dark mr-2">Редактировать данные</a>
+            <a href="?edit=1" class="btn btn-dark mr-2"><img src="/assets/images/edit.svg"> Редактировать данные</a>
             <?php if( $user->role == User::ROLE_USER ){ ?>
-                <a href="/discography/group?id=<?=htmlspecialchars($user->id)?>" class="btn btn-dark">Моя дискография</a>
+                <a href="/discography/group?id=<?=htmlspecialchars($user->id)?>" class="btn btn-dark"><img src="/assets/images/disc.svg"> Моя дискография</a>
             <?php } ?>
         <?php } ?>
     </div>

@@ -36,7 +36,7 @@
 
             <?php if( $isMy ){ ?>
                 <hr>
-                <a class="btn btn-dark" href="/discography/add">Добавить трек</a>
+                <a class="btn btn-dark" href="/discography/add"><img src="/assets/images/plus.svg"> Добавить трек</a>
             <?php } ?>
     </div>
 </div>
