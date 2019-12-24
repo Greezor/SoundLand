@@ -16,11 +16,10 @@ $me = User::getMe();
     <title>SoundLand</title>
 </head>
 <body class="main">
-    <img src="/assets/images/logo.png" style="  position: absolute; z-index: -10;" >
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-bottom:0px; padding-top:0px;background-color:rgba(0,0,0,0.6) !important;">
+    <img src="/assets/images/logo.png" style="position: fixed; z-index: -10;" >
+    <nav class="navbar navbar-expand-lg navbar-light bg-light " style="padding-bottom:0px; padding-top:0px;background-color:rgba(0,0,0,0.6) !important;">
 
-      <p><a href="/"><img width="300" height="50" src="/assets/images/title.png" style="margin:0 auto; display:block;"></a></p>
-
+      <p><a href="/"><img height="35" src="/assets/images/title.png" style="margin:0 auto; display:block;margin-top: 15px; margin-right: 10px;"></a></p>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <?php if( !!$me ){ ?>
@@ -41,7 +40,7 @@ $me = User::getMe();
         <ul class="nav navbar-nav pull-right">
             <?php if( !!$me ){ ?>
                 <li>
-                    <a href="/auth/logout" class="btn btn-dark" style="color:#FFFFFF;">Выйти</a>
+                    <a href="/auth/logout" class="btn btn-dark" style="color:#FFFFFF;"><img src="/assets/images/log-out.svg"> Выйти</a>
                 </li>
             <?php }else{ ?>
                 <li>

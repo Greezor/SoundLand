@@ -1,5 +1,5 @@
 <form method="POST" style="width: 500px; margin:100px auto; display:block;background-color: #FFFFFF99;border: 6px solid #00000099;padding: 40px; border-radius: 25px;">
-    <h3 class="mb-5 text-center">Регистрация пользователя</h3>
+    <h3 class="mb-4 text-center">Регистрация пользователя</h3>
 
     <label class="d-block form-group">
         <span class="control-label">Адрес электронной почты</span>
@@ -47,7 +47,7 @@
         </big>
     <?php } ?>
 
-    <div class="mt-5 text-center">
+    <div class="mt-4 text-center">
         <button type="submit" class="btn btn-dark">Зарегистрироваться</button>
     </div>
 </form>

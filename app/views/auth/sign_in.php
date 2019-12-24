@@ -1,9 +1,9 @@
 <form method="POST" style="width: 500px; margin:100px auto; display:block;background-color: #FFFFFF99;border: 6px solid #00000099;padding: 40px; border-radius: 25px;">
-    <h3 class="mb-5 text-center">Вход</h3>
+    <h3 class="mb-4 text-center">Вход</h3>
 
     <?php if( $signed_up ){ ?>
         <div class="alert alert-success">
-            <h3>Вы успешно зарегистрированы в системе!</h3>
+            <h6>Вы успешно зарегистрированы в системе!</h6>
             <hr>
             <span>Для авторизации, воспользуйтесь формой ниже.</span>
         </div>
@@ -25,7 +25,7 @@
         </div>
     <?php } ?>
 
-    <div class="mt-5 text-center">
+    <div class="mt-4 text-center">
         <button type="submit" class="btn btn-dark">Войти</button>
     </div>
 </form>
