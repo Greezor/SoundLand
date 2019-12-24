@@ -25,7 +25,7 @@ $me = User::getMe();
             <?php if( !!$me ){ ?>
                 <?php if( $me->role == User::ROLE_ADMIN || $me->role == User::ROLE_CONTENT_MANAGER ){ ?>
                     <li class="nav-item">
-                        <a href="/cms/index" class="btn btn-dark my-2 mr-2" style="color:#FFFFFF;">CMS</a>
+                        <a href="/cms/index" class="btn btn-dark my-2 mr-2" style="color:#FFFFFF;"><img src="/assets/images/pen-tool.svg"> CMS</a>
                     </li>
                 <?php } ?>
                 <li class="nav-item">
