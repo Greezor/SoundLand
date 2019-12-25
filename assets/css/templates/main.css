@@ -1,3 +1,16 @@
 .main {
-background-image: url("/assets/images/var0.png");
+    background-image: url("/assets/images/var0.png");
+    background-repeat: repeat-y;
+    background-position: center;
+    background-size: cover;
+}
+
+.main .main-logo{
+    position: fixed;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: auto;
+    transform: translateY(-50%);
+    z-index: -10;
 }
