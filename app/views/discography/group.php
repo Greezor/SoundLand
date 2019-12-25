@@ -23,7 +23,7 @@
                         <?php if( $isMy || $me->role == User::ROLE_ADMIN || $me->role == User::ROLE_CONTENT_MANAGER ){ ?>
                             <div class="ml-2">
                                 <a
-                                    onclick="if( !confirm('Вы уверены?') ) return false;"
+                                    onclick="if( !confirm('Вы уверены, что хотите удалить трек?') ) return false;"
                                     class="btn btn-danger"
                                     href="/discography/delete?id=<?=htmlspecialchars($track->id)?>">
                                     <span>Удалить</span>
