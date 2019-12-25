@@ -13,4 +13,4 @@ jobs:
         FTP_USERNAME: sound-land
         FTP_PASSWORD: 4m!iBQy@LX%8Xw4GBR*f
         REMOTE_DIR: /public_html/
-        ARGS: --verbose --delete --delete-excluded --exclude-glob=**/.git*/** --exclude-glob=**/.git** --include=**/app/config/db.php --include=**/app/config/db.version.json
+        ARGS: --verbose --delete --delete-excluded --exclude-glob=**/.git*/** --exclude-glob=**/.git** --include-glob=**/app/config/db.php --include-glob=**/app/config/db.version.json
