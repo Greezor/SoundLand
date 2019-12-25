@@ -1,8 +1,7 @@
 .main {
     background-image: url("/assets/images/var0.png");
     background-repeat: repeat-y;
-    background-position: center;
-    background-size: cover;
+    background-size: 100%;
 }
 
 .main .main-logo{
