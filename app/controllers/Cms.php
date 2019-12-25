@@ -73,6 +73,66 @@ class Cms extends Controller
         return $this->redirect('/cms/news');
     }
 
+    public function users()
+    {
+        $me = $this->checkAccessForAdminOnly();
+
+        echo $this->render('cms/users', [
+            'users' => User::find('where id <> :id', [
+                'id' => $me->id,
+            ]),
+        ]);
+    }
+
+    public function user_form()
+    {
+        $this->checkAccessForAdminOnly();
+
+        $error = false;
+
+        $user = User::find('where id = :id', [
+            'id' => (int) $_GET['id'],
+        ])[0];
+
+        if( !$user )
+            $user = new User;
+
+        if( $_POST ){
+            $form = $_POST['User'];
+
+            $user->login = $form['login'];
+            $user->nickname = $form['nickname'];
+            $user->role = $form['role'];
+
+            if( !!$form['password'] )
+                $user->autopass = $form['password'];
+
+            if( !!$user->login && !!$user->nickname && !!$user->password && $user->save() )
+                return $this->redirect('/cms/users');
+
+            $error = true;
+        }
+
+        echo $this->render('cms/user_form', [
+            'user' => $user,
+            'error' => $error,
+        ]);
+    }
+
+    public function delete_user()
+    {
+        $this->checkAccessForAdminOnly();
+
+        $user = User::find('where id = :id', [
+            'id' => (int) $_GET['id'],
+        ])[0];
+
+        if( !!$user )
+            $user->delete();
+
+        return $this->redirect('/cms/users');
+    }
+
 
 
 
@@ -90,7 +150,6 @@ class Cms extends Controller
             return $this->redirect('/composer/cabinet');
         }
 
-        echo $this->render('cms/index');
         return $user;
     }
 
