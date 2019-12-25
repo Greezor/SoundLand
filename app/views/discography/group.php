@@ -3,7 +3,7 @@
 ?>
 <div class="card" align="center" style="width: 50rem;margin:50px auto; background-color:#FFFFFF99;border: 6px solid #00000099;padding: 10px; border-radius: 25px;">
     <div class="card-body" align="left" >
-        <img class="w-100" src="<?=htmlspecialchars($user->icon)?>" class="card-img-top" alt="icon" >
+        <img class="w-100" src="<?=htmlspecialchars($user->icon)?>" class="card-img-top" alt="icon" height="400" >
             <h2>
                 <?=htmlspecialchars($user->nickname)?>
             </h2>
