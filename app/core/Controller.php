@@ -14,6 +14,7 @@ class Controller extends BaseClass
         extract($params);
 
         if( $templateWrapper ){
+            ob_clean();
             ob_start();
             require __DIR__ . "/../templates/{$this->template}.php";
             $output = ob_get_contents();
