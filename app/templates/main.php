@@ -8,15 +8,28 @@ $me = User::getMe();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/css/index.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SoundLand</title>
+
+    <!-- Bootstrap4.Start -->
+    <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Bootstrap4.End -->
+
+    <!-- FontAwesome.Start -->
+    <link href="//use.fontawesome.com/releases/v5.12.0/css/all.css" rel="stylesheet">
+    <!-- FontAwesome.End -->
+
+    <!-- QuillJS.Start -->
+    <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+    <!-- QuillJS.End -->
+
+    <link rel="stylesheet" href="/assets/css/index.css">
 </head>
 <body class="main">
-    <img src="/assets/images/logo.png" style="position: fixed; z-index: -10;" >
+    <img class="main-logo" src="/assets/images/logo.png" >
     <nav class="navbar navbar-expand-lg navbar-light bg-light " style="padding-bottom:0px; padding-top:0px;background-color:rgba(0,0,0,0.6) !important;">
 
       <p><a href="/"><img height="35" src="/assets/images/title.png" style="margin:0 auto; display:block;margin-top: 15px; margin-right: 10px;"></a></p>
@@ -62,9 +75,9 @@ $me = User::getMe();
 
 
 
-    <nav class="navbar fixed-bottom navbar-light bg-light" style="padding-bottom:0px; padding-top:0px;background-color:rgba(0,0,0,0.6) !important;">
+    <footer class="navbar fixed-bottom navbar-light bg-light" style="padding-bottom:0px; padding-top:0px;background-color:rgba(0,0,0,0.6) !important;">
       <span style="color:#FFFFFF;" >&copy; <?=date('Y')?> Leon</span>
-    </nav>
+    </footer>
 
 </body>
 </html>
